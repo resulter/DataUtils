@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsProject" table="BS_Project" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int"/>
+        </property>
+        <property name="sFCode">
+            <column name="sFCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sCode">
+            <column name="sCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sName">
+            <column name="sName" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sDeptCode">
+            <column name="sDeptCode" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="sDescription">
+            <column name="sDescription" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="nAudit">
+            <column name="nAudit" sql-type="int"/>
+        </property>
+        <property name="nSystemTag">
+            <column name="nSystemTag" sql-type="int"/>
+        </property>
+        <property name="dtModify">
+            <column name="dtModify" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sManagementCode">
+            <column name="sManagementCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

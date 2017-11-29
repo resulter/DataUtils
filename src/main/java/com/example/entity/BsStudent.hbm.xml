@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsStudent" table="BS_Student" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sCode">
+            <column name="sCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sIdCard">
+            <column name="sIdCard" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="dtBirthday">
+            <column name="dtBirthday" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sName">
+            <column name="sName" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="nGender">
+            <column name="nGender" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sPhone">
+            <column name="sPhone" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sMobile">
+            <column name="sMobile" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sEmail">
+            <column name="sEmail" sql-type="varchar(40)" length="40" not-null="true"/>
+        </property>
+        <property name="sAddress">
+            <column name="sAddress" sql-type="varchar(300)" length="300" not-null="true"/>
+        </property>
+        <property name="sPostCode">
+            <column name="sPostCode" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="sMemo">
+            <column name="sMemo" sql-type="varchar(max)" length="2147483647" not-null="true"/>
+        </property>
+        <property name="dAccount">
+            <column name="dAccount" sql-type="numeric(19,2)" precision="19" scale="2"/>
+        </property>
+        <property name="dtCreateTime">
+            <column name="dtCreateTime" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dtModify">
+            <column name="dtModify" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="nIncrement">
+            <column name="nIncrement" sql-type="int" not-null="true"/>
+        </property>
+        <property name="dForeGroundBalance">
+            <column name="dForeGroundBalance" sql-type="numeric(19,2)" precision="19" scale="2"/>
+        </property>
+        <property name="dRemitBalance">
+            <column name="dRemitBalance" sql-type="numeric(19,2)" precision="19" scale="2"/>
+        </property>
+        <property name="dWebBalance">
+            <column name="dWebBalance" sql-type="numeric(19,2)" precision="19" scale="2"/>
+        </property>
+        <property name="dTelBalance">
+            <column name="dTelBalance" sql-type="numeric(19,2)" precision="19" scale="2"/>
+        </property>
+        <property name="sFirstContactMobile">
+            <column name="sFirstContactMobile" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sOtherContact">
+            <column name="sOtherContact" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="qq">
+            <column name="QQ" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="msn">
+            <column name="MSN" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="bAdult">
+            <column name="bAdult" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="nStudyGrade">
+            <column name="nStudyGrade" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nAge">
+            <column name="nAge" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sMasterCode">
+            <column name="sMasterCode" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="nCertificateType">
+            <column name="nCertificateType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sConsultant">
+            <column name="sConsultant" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="nGrade">
+            <column name="nGrade" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sGuid">
+            <column name="sGUID" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="sCallInMobile">
+            <column name="sCallInMobile" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="sCallInPhone">
+            <column name="sCallInPhone" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sMobile4">
+            <column name="sMobile4" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="sMobile5">
+            <column name="sMobile5" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <property name="weChat">
+            <column name="weChat" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="studentLevel">
+            <column name="student_Level" sql-type="int" not-null="true"/>
+        </property>
+        <property name="studentLevelSys">
+            <column name="student_LevelSys" sql-type="int" not-null="true"/>
+        </property>
+        <property name="annualRevenue">
+            <column name="annual_Revenue" sql-type="int" not-null="true"/>
+        </property>
+        <property name="studentAttr">
+            <column name="studentAttr" sql-type="int" not-null="true"/>
+        </property>
+        <property name="blacklist">
+            <column name="blacklist" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="doNotCall">
+            <column name="do_not_call" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="isComplaintAccount">
+            <column name="isComplaintAccount" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="duplicateReasonPicklist">
+            <column name="duplicate_Reason_Picklist" sql-type="int" not-null="true"/>
+        </property>
+        <property name="duplicateReason">
+            <column name="duplicate_Reason" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="careMailingAddress">
+            <column name="care_Mailing_Address" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="careMailingPostCode">
+            <column name="care_Mailing_Post_Code" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="countryLookup">
+            <column name="countryLookup" sql-type="int" not-null="true"/>
+        </property>
+        <property name="provinceLookup">
+            <column name="provinceLookup" sql-type="int" not-null="true"/>
+        </property>
+        <property name="citylookup">
+            <column name="citylookup" sql-type="int" not-null="true"/>
+        </property>
+        <property name="areaLookup">
+            <column name="areaLookup" sql-type="int" not-null="true"/>
+        </property>
+        <property name="studySchoolId">
+            <column name="studySchoolId" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="college">
+            <column name="college" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="major">
+            <column name="major" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="wlke">
+            <column name="wlke" sql-type="int" not-null="true"/>
+        </property>
+        <property name="compyName">
+            <column name="CompyName" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="oneCardNo">
+            <column name="One_Card_No" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="membership">
+            <column name="Membership" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="greenChannelNo">
+            <column name="Green_Channel_No" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="idVerified">
+            <column name="ID_Verified" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="mobileChecked">
+            <column name="Mobile_Checked" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="emailChecked">
+            <column name="Email_Checked" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="callsTo">
+            <column name="Calls_To" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="crmState">
+            <column name="CRMState" sql-type="int" not-null="true"/>
+        </property>
+        <property name="contactMobile1">
+            <column name="ContactMobile1" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="contactMobile2">
+            <column name="ContactMobile2" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="contactMobile3">
+            <column name="ContactMobile3" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="contactMobile4">
+            <column name="ContactMobile4" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="phoneArea">
+            <column name="PhoneArea" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="phoneExtension">
+            <column name="PhoneExtension" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="userLevel">
+            <column name="UserLevel" sql-type="decimal(18,2)" precision="18" scale="2" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsClass" table="BS_Class" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int"/>
+        </property>
+        <property name="sCode">
+            <column name="sCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sFCode">
+            <column name="sFCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sName">
+            <column name="sName" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sDescription">
+            <column name="sDescription" sql-type="varchar(60)" length="60" not-null="true"/>
+        </property>
+        <property name="nState">
+            <column name="nState" sql-type="int"/>
+        </property>
+        <property name="bCanRegister">
+            <column name="bCanRegister" sql-type="bit"/>
+        </property>
+        <property name="bIsEnd">
+            <column name="bIsEnd" sql-type="bit"/>
+        </property>
+        <property name="bIsResideClass">
+            <column name="bIsResideClass" sql-type="bit"/>
+        </property>
+        <property name="sAttribute">
+            <column name="sAttribute" sql-type="varchar(150)" length="150" not-null="true"/>
+        </property>
+        <property name="sClassTypeCode">
+            <column name="sClassTypeCode" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="sPrintAddress">
+            <column name="sPrintAddress" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="sLocation">
+            <column name="sLocation" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="sRoomCode">
+            <column name="sRoomCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="dtRegister1StDate">
+            <column name="dtRegister1stDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sRegisterTime">
+            <column name="sRegisterTime" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="dtBeginDate">
+            <column name="dtBeginDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dtEndDate">
+            <column name="dtEndDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="nHoliday">
+            <column name="nHoliday" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sPrintTime">
+            <column name="sPrintTime" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="nLesson">
+            <column name="nLesson" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nTryLesson">
+            <column name="nTryLesson" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nFreeLesson">
+            <column name="nFreeLesson" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nInsertLesson">
+            <column name="nInsertLesson" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sMemo">
+            <column name="sMemo" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="nNormalCount">
+            <column name="nNormalCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nMaxCount">
+            <column name="nMaxCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="dFee">
+            <column name="dFee" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="dBookFee">
+            <column name="dBookFee" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="dBookCost">
+            <column name="dBookCost" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="dTryFee">
+            <column name="dTryFee" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="dInsertFee">
+            <column name="dInsertFee" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nCurrentCount">
+            <column name="nCurrentCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nSeqNumber">
+            <column name="nSeqNumber" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nPostTranCount">
+            <column name="nPostTranCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nSystemTag">
+            <column name="nSystemTag" sql-type="int"/>
+        </property>
+        <property name="bVirtual">
+            <column name="bVirtual" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sPrintMemo">
+            <column name="sPrintMemo" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="nAudit">
+            <column name="nAudit" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nReservedSeats">
+            <column name="nReservedSeats" sql-type="int" not-null="true"/>
+        </property>
+        <property name="dtSetupDate">
+            <column name="dtSetupDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sOperatorCode">
+            <column name="sOperatorCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sOperatorName">
+            <column name="sOperatorName" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="bPrintSeatNo">
+            <column name="bPrintSeatNo" sql-type="bit"/>
+        </property>
+        <property name="nMaleMaxCount">
+            <column name="nMaleMaxCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nFemaleMaxCount">
+            <column name="nFemaleMaxCount" sql-type="int" not-null="true"/>
+        </property>
+        <property name="dtModify">
+            <column name="dtModify" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="bIsNet">
+            <column name="bIsNet" sql-type="bit"/>
+        </property>
+        <property name="sAuditCode">
+            <column name="sAuditCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dtAuditDate">
+            <column name="dtAuditDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sModifyCode">
+            <column name="sModifyCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dtModifyDate">
+            <column name="dtModifyDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="nFYear">
+            <column name="nFYear" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sClassAttribute">
+            <column name="sClassAttribute" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="nPlanMinutes">
+            <column name="nPlanMinutes" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nRealMinutes">
+            <column name="nRealMinutes" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sClassSize">
+            <column name="sClassSize" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="bVip">
+            <column name="bVIP" sql-type="bit"/>
+        </property>
+        <property name="sNameBefore">
+            <column name="sNameBefore" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="sNameAfter">
+            <column name="sNameAfter" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sNameDecorate">
+            <column name="sNameDecorate" sql-type="varchar(24)" length="24" not-null="true"/>
+        </property>
+        <property name="sManagementCode">
+            <column name="sManagementCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="bSouke">
+            <column name="bSouke" sql-type="bit"/>
+        </property>
+        <property name="dtProperty">
+            <column name="dtProperty" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="bPublishTeacher">
+            <column name="bPublishTeacher" sql-type="bit"/>
+        </property>
+        <property name="nGradualType">
+            <column name="nGradualType" sql-type="int"/>
+        </property>
+        <property name="accommodationType">
+            <column name="AccommodationType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="xunChengType1">
+            <column name="XunChengType1" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="xunChengType2">
+            <column name="XunChengType2" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="classScaleType">
+            <column name="ClassScaleType" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="bIsVideoClass">
+            <column name="bIsVideoClass" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="courseCode">
+            <column name="CourseCode" sql-type="nvarchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="bMainArrangeClass">
+            <column name="bMainArrangeClass" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="bHasTeachingMaterial">
+            <column name="bHasTeachingMaterial" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="nSetClassType">
+            <column name="nSetClassType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sOrderCode">
+            <column name="sOrderCode" sql-type="nvarchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sCourseProductName">
+            <column name="sCourseProductName" sql-type="varchar(128)" length="128" not-null="true"/>
+        </property>
+        <property name="sClassCapacityCode">
+            <column name="sClassCapacityCode" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="sClassCapacityName">
+            <column name="sClassCapacityName" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="classBookDeliveryType">
+            <column name="ClassBookDeliveryType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="bLock">
+            <column name="bLock" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sMemoLesson">
+            <column name="sMemoLesson" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="nUseCard">
+            <column name="nUseCard" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sClassMode">
+            <column name="sClassMode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sClassTime">
+            <column name="sClassTime" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sBookVersion">
+            <column name="sBookVersion" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sTeachingContent">
+            <column name="sTeachingContent" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="bInsurance">
+            <column name="bInsurance" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sProductTypeCode">
+            <column name="sProductTypeCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dtCancelDate">
+            <column name="dtCancelDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sCancelReason">
+            <column name="sCancelReason" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="nMakePoint">
+            <column name="nMakePoint" sql-type="int"/>
+        </property>
+        <property name="sTeacher">
+            <column name="sTeacher" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="nMergeState">
+            <column name="nMergeState" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sMergeRemark">
+            <column name="sMergeRemark" sql-type="nvarchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="bOnlineLive">
+            <column name="bOnlineLive" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sClassSubject">
+            <column name="sClassSubject" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="sQuarter">
+            <column name="sQuarter" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="bContinuedClass">
+            <column name="bContinuedClass" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sCourseConsultant">
+            <column name="sCourseConsultant" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sStudyManager">
+            <column name="sStudyManager" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sOriginalClassCode">
+            <column name="sOriginalClassCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sTown">
+            <column name="sTown" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

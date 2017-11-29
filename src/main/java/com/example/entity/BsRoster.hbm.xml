@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsRoster" table="BS_Roster" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int"/>
+        </property>
+        <property name="sCardCode">
+            <column name="sCardCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sClassCode">
+            <column name="sClassCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sStudentCode">
+            <column name="sStudentCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="bValid">
+            <column name="bValid" sql-type="bit"/>
+        </property>
+        <property name="bInsert">
+            <column name="bInsert" sql-type="bit"/>
+        </property>
+        <property name="bCanCancel">
+            <column name="bCanCancel" sql-type="bit"/>
+        </property>
+        <property name="bCanTrans">
+            <column name="bCanTrans" sql-type="bit"/>
+        </property>
+        <property name="bCanPostTrans">
+            <column name="bCanPostTrans" sql-type="bit"/>
+        </property>
+        <property name="dtInDate">
+            <column name="dtInDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sFromClassCode">
+            <column name="sFromClassCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="dtOutDate">
+            <column name="dtOutDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sToClassCode">
+            <column name="sToClassCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="nSeatNo">
+            <column name="nSeatNo" sql-type="int"/>
+        </property>
+        <property name="nStartLesson">
+            <column name="nStartLesson" sql-type="int"/>
+        </property>
+        <property name="nEndLesson">
+            <column name="nEndLesson" sql-type="int"/>
+        </property>
+        <property name="nInType">
+            <column name="nInType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nOutType">
+            <column name="nOutType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nInBiz">
+            <column name="nInBiz" sql-type="int"/>
+        </property>
+        <property name="nOutBiz">
+            <column name="nOutBiz" sql-type="int"/>
+        </property>
+        <property name="dPay">
+            <column name="dPay" sql-type="float" precision="-1"/>
+        </property>
+        <property name="dMaxNonCheque">
+            <column name="dMaxNonCheque" sql-type="float" precision="-1"/>
+        </property>
+        <property name="dMaxCheque">
+            <column name="dMaxCheque" sql-type="float" precision="-1"/>
+        </property>
+        <property name="dVoucher">
+            <column name="dVoucher" sql-type="float" precision="-1"/>
+        </property>
+        <property name="nVoucherId">
+            <column name="nVoucherId" sql-type="int"/>
+        </property>
+        <property name="dReservedBookFee">
+            <column name="dReservedBookFee" sql-type="float" precision="-1"/>
+        </property>
+        <property name="sMemo">
+            <column name="sMemo" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="dtArrangeSeat">
+            <column name="dtArrangeSeat" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="bNotGetBook">
+            <column name="bNotGetBook" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="bGiveUpLeftFee">
+            <column name="bGiveUpLeftFee" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="dtGiveUpLeftFee">
+            <column name="dtGiveUpLeftFee" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="nHasBizTimes">
+            <column name="nHasBizTimes" sql-type="int"/>
+        </property>
+        <property name="nFinanceAudit">
+            <column name="nFinanceAudit" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sRcvRemitCode">
+            <column name="sRcvRemitCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sWebRegBillCode">
+            <column name="sWebRegBillCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sInTime">
+            <column name="sInTime" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sOutTime">
+            <column name="sOutTime" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sNewCardCode">
+            <column name="sNewCardCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dOldStudentVoucher">
+            <column name="dOldStudentVoucher" sql-type="money" not-null="true"/>
+        </property>
+        <property name="sAgentName">
+            <column name="sAgentName" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sAgentIdCard">
+            <column name="sAgentIdCard" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="nChannel">
+            <column name="nChannel" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sBizMemo">
+            <column name="sBizMemo" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="dtModify">
+            <column name="dtModify" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dVoucherTransFee">
+            <column name="dVoucherTransFee" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="sRegZoneCode">
+            <column name="sRegZoneCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="dPointPay">
+            <column name="dPointPay" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="invoicePinted">
+            <column name="InvoicePinted" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sOrderCode">
+            <column name="sOrderCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sTranCancelReasonType">
+            <column name="sTranCancelReasonType" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="sTranCancelReasonItem">
+            <column name="sTranCancelReasonItem" sql-type="varchar(80)" length="80" not-null="true"/>
+        </property>
+        <property name="oldRecommendStudentCode">
+            <column name="OldRecommendStudentCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="nIntegralMultiple">
+            <column name="nIntegralMultiple" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nIntegralOldStudent">
+            <column name="nIntegralOldStudent" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nIntegralGift">
+            <column name="nIntegralGift" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nIntegralRecommendMultiple">
+            <column name="nIntegralRecommendMultiple" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nSubChannel">
+            <column name="nSubChannel" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sSystemSource">
+            <column name="sSystemSource" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sMarketingSources">
+            <column name="sMarketingSources" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

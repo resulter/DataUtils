@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsLesson" table="BS_Lesson" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int"/>
+        </property>
+        <property name="sClassCode">
+            <column name="sClassCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="nLessonNo">
+            <column name="nLessonNo" sql-type="int"/>
+        </property>
+        <property name="nLessonNo1">
+            <column name="nLessonNo1" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sRoomCode">
+            <column name="sRoomCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sTeacherCode">
+            <column name="sTeacherCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sCourseCode">
+            <column name="sCourseCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="dtDate">
+            <column name="dtDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dRoomCost">
+            <column name="dRoomCost" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="dTeacherCost">
+            <column name="dTeacherCost" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="sMemo">
+            <column name="sMemo" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="sectBegin">
+            <column name="SectBegin" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sectEnd">
+            <column name="SectEnd" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="lectureCode">
+            <column name="LectureCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="lessonType">
+            <column name="LessonType" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nMinute">
+            <column name="nMinute" sql-type="int" not-null="true"/>
+        </property>
+        <property name="sTeacherCode2">
+            <column name="sTeacherCode2" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sTeacherCode3">
+            <column name="sTeacherCode3" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sLessonMemo">
+            <column name="sLessonMemo" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="nLessonNoCourse">
+            <column name="nLessonNoCourse" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nAudit">
+            <column name="nAudit" sql-type="int"/>
+        </property>
+        <property name="auditorCode">
+            <column name="AuditorCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="auditDate">
+            <column name="AuditDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sOperatorCode">
+            <column name="sOperatorCode" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sOperateDate">
+            <column name="sOperateDate" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sWeek">
+            <column name="sWeek" sql-type="nvarchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="cardPush">
+            <column name="CardPush" sql-type="int" not-null="true"/>
+        </property>
+        <property name="bIfPublish">
+            <column name="bIfPublish" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="cardPushStudent">
+            <column name="CardPushStudent" sql-type="int" not-null="true"/>
+        </property>
+        <property name="cardPushTeacher">
+            <column name="CardPushTeacher" sql-type="int" not-null="true"/>
+        </property>
+        <property name="dtHbDate">
+            <column name="dt_hb_Date" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dtHbSectBegin">
+            <column name="dt_hb_SectBegin" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="dtHbSectEnd">
+            <column name="dt_hb_SectEnd" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sHbTeacherCode">
+            <column name="s_hb_TeacherCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sHbTeacherCode2">
+            <column name="s_hb_TeacherCode2" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sHbTeacherCode3">
+            <column name="s_hb_TeacherCode3" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sHbCourseCode">
+            <column name="s_hb_CourseCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sHbRoomCode">
+            <column name="s_hb_RoomCode" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sHbManagementCode">
+            <column name="s_hb_ManagementCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="nHbFlag">
+            <column name="n_hb_Flag" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sMergeRemark">
+            <column name="sMergeRemark" sql-type="nvarchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="cardPushTeacher2">
+            <column name="CardPushTeacher2" sql-type="int" not-null="true"/>
+        </property>
+        <property name="cardPushTeacher3">
+            <column name="CardPushTeacher3" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nIsVideoLesson">
+            <column name="nIsVideoLesson" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

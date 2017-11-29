@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.Dtproperties" table="dtproperties" schema="dbo" catalog="BJ20140915">
+        <composite-id mapped="true" class="com.example.entity.DtpropertiesPK">
+            <key-property name="id">
+                <column name="id" sql-type="int"/>
+            </key-property>
+            <key-property name="property">
+                <column name="property" sql-type="varchar(64)" length="64"/>
+            </key-property>
+        </composite-id>
+        <property name="objectid">
+            <column name="objectid" sql-type="int" not-null="true"/>
+        </property>
+        <property name="value">
+            <column name="value" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="uvalue">
+            <column name="uvalue" sql-type="nvarchar(255)" not-null="true"/>
+        </property>
+        <property name="lvalue">
+            <column name="lvalue" sql-type="image" not-null="true"/>
+        </property>
+        <property name="version">
+            <column name="version" sql-type="int"/>
+        </property>
+    </class>
+</hibernate-mapping>

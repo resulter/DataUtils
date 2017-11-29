@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.BsRoom" table="BS_Room" schema="dbo" catalog="BJ20140915">
+        <id name="id">
+            <column name="id" sql-type="int"/>
+        </id>
+        <property name="nSchoolId">
+            <column name="nSchoolId" sql-type="int"/>
+        </property>
+        <property name="sCode">
+            <column name="sCode" sql-type="varchar(30)" length="30"/>
+        </property>
+        <property name="sAreaCode">
+            <column name="sAreaCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sName">
+            <column name="sName" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="sDeptCode">
+            <column name="sDeptCode" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sDescription">
+            <column name="sDescription" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="sAddress">
+            <column name="sAddress" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="sPostCode">
+            <column name="sPostCode" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="sRoute">
+            <column name="sRoute" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+        <property name="nNormalNum">
+            <column name="nNormalNum" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nMaxNum">
+            <column name="nMaxNum" sql-type="int" not-null="true"/>
+        </property>
+        <property name="nArea">
+            <column name="nArea" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="nAreaPercent">
+            <column name="nAreaPercent" sql-type="float" precision="-1" not-null="true"/>
+        </property>
+        <property name="sAdmin">
+            <column name="sAdmin" sql-type="varchar(30)" length="30" not-null="true"/>
+        </property>
+        <property name="sMemo">
+            <column name="sMemo" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="sPhone">
+            <column name="sPhone" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="bValid">
+            <column name="bValid" sql-type="bit"/>
+        </property>
+        <property name="nAudit">
+            <column name="nAudit" sql-type="int"/>
+        </property>
+        <property name="dtModify">
+            <column name="dtModify" sql-type="datetime" not-null="true"/>
+        </property>
+        <property name="sRoomEngLishName">
+            <column name="sRoomEngLishName" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="bVipRoom">
+            <column name="bVIPRoom" sql-type="bit" not-null="true"/>
+        </property>
+        <property name="sRoomDepts">
+            <column name="sRoomDepts" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="sOperatorCode">
+            <column name="sOperatorCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="sAuditCode">
+            <column name="sAuditCode" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="dtAuditDate">
+            <column name="dtAuditDate" sql-type="datetime" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

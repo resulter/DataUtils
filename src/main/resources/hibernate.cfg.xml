@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:sqlserver://192.168.25.98;database=BJ20140915</property>
+    <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="db_wutianlin_bj"/>
+    <property name="beijing_wtl_test"/>
+    <mapping resource="com/example/entity/SysDict.hbm.xml"/>
+      <mapping class="com.example.entity.SysDict"/>
+    <mapping resource="com/example/entity/BsArea.hbm.xml"/>
+    <mapping class="com.example.entity.BsArea"/>
+    <mapping resource="com/example/entity/BsAreaNew.hbm.xml"/>
+    <mapping class="com.example.entity.BsAreaNew"/>
+    <mapping resource="com/example/entity/BsClass.hbm.xml"/>
+    <mapping class="com.example.entity.BsClass"/>
+    <mapping resource="com/example/entity/BsClassType.hbm.xml"/>
+    <mapping class="com.example.entity.BsClassType"/>
+    <mapping resource="com/example/entity/BsCourse.hbm.xml"/>
+    <mapping class="com.example.entity.BsCourse"/>
+    <mapping resource="com/example/entity/BsLesson.hbm.xml"/>
+    <mapping class="com.example.entity.BsLesson"/>
+    <mapping resource="com/example/entity/BsLessonTrg.hbm.xml"/>
+    <mapping class="com.example.entity.BsLessonTrg"/>
+    <mapping resource="com/example/entity/BsProject.hbm.xml"/>
+    <mapping class="com.example.entity.BsProject"/>
+    <mapping resource="com/example/entity/BsRoom.hbm.xml"/>
+    <mapping class="com.example.entity.BsRoom"/>
+    <mapping resource="com/example/entity/BsStudent.hbm.xml"/>
+    <mapping class="com.example.entity.BsStudent"/>
+    <mapping resource="com/example/entity/BsTeacher.hbm.xml"/>
+    <mapping class="com.example.entity.BsTeacher"/>
+    <mapping class="com.example.entity.SDept"/>
+    <mapping resource="com/example/entity/SDept.hbm.xml"/>
+    <mapping resource="com/example/entity/Dtproperties.hbm.xml"/>
+    <mapping class="com.example.entity.Dtproperties"/>
+    <mapping resource="com/example/entity/BsRoster.hbm.xml"/>
+    <mapping class="com.example.entity.BsRoster"/>
+
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

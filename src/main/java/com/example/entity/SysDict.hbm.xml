@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.example.entity.SysDict" table="sys_dict" schema="jeesite">
+        <id name="id">
+            <column name="id" sql-type="varchar(64)" length="64"/>
+        </id>
+        <property name="value">
+            <column name="value" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="label">
+            <column name="label" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="sort">
+            <column name="sort" sql-type="decimal(10)" precision="10"/>
+        </property>
+        <property name="parentId">
+            <column name="parent_id" sql-type="varchar(64)" length="64" not-null="true"/>
+        </property>
+        <property name="createBy">
+            <column name="create_by" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="createDate">
+            <column name="create_date" sql-type="datetime"/>
+        </property>
+        <property name="updateBy">
+            <column name="update_by" sql-type="varchar(64)" length="64"/>
+        </property>
+        <property name="updateDate">
+            <column name="update_date" sql-type="datetime"/>
+        </property>
+        <property name="remarks">
+            <column name="remarks" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="delFlag">
+            <column name="del_flag" sql-type="char(1)" length="1"/>
+        </property>
+    </class>
+</hibernate-mapping>
