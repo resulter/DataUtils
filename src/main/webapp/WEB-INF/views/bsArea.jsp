@@ -37,6 +37,7 @@
             $("#modify").datepicker({
                 defaultDate: "+1w",
                 changeMonth: true,
+                changeYear: true,
                 numberOfMonths: 1,
                 onClose: function (selectedDate) {
                     $("#modify").datepicker("option", "dateFormat", "yy-mm-dd");
@@ -87,11 +88,11 @@
     <br/>
     <form action="/a/getBSArea" name="search" method="get" class="form-horizontal">
         &nbsp;&nbsp;<label for="schoolCode">校区编码</label>&nbsp;&nbsp;
-        <input type="text" id="schoolCode" name="schoolCode" >
+        <input type="text" id="schoolCode" name="schoolCode" value="${searchMap["schoolCode"]}" >
         &nbsp;&nbsp;<label for="schoolName">校区名称</label>&nbsp;&nbsp;
-        <input type="text" id="schoolName" name="schoolName" >
+        <input type="text" id="schoolName" name="schoolName" value="${searchMap["schoolName"]}" >
         &nbsp;&nbsp;<label for="modify">修改时间</label>
-        <input type="text" id="modify" name="modify">
+        <input type="text" id="modify" name="modify" value="${searchMap["modify"]}">
        <%-- &nbsp;&nbsp;<label for="objectId"> Id </label>&nbsp;&nbsp;
         <input type="text" id="objectId" name="objectId">
         &nbsp;&nbsp;<label for="from">从</label>
@@ -132,11 +133,11 @@
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>
 
-                <a href="${path}/a/getBSArea?pageNo=${page.topPageNo }"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getBSArea?pageNo=${page.topPageNo}&schoolCode=${searchMap["schoolCode"]}&schoolName=${searchMap["schoolName"]}&modify=${searchMap["modify"]}"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
                 <c:choose>
                     <c:when test="${page.pageNo!=1}">
 
-                        <a href="${path}/a/getBSArea?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getBSArea?pageNo=${page.previousPageNo}&schoolCode=${searchMap["schoolCode"]}&schoolName=${searchMap["schoolName"]}&modify=${searchMap["modify"]} "><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
 
                     </c:when>
                     <c:otherwise>
@@ -147,7 +148,7 @@
                 </c:choose>
                 <c:choose>
                     <c:when test="${page.pageNo != page.totalPages}">
-                        <a href="${path}/a/getBSArea?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getBSArea?pageNo=${page.nextPageNo} &schoolCode=${searchMap["schoolCode"]}&schoolName=${searchMap["schoolName"]}&modify=${searchMap["modify"]}"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
                     </c:when>
                     <c:otherwise>
 
@@ -155,7 +156,7 @@
 
                     </c:otherwise>
                 </c:choose>
-                <a href="${path}/a/getBSArea?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getBSArea?pageNo=${page.bottomPageNo}&schoolCode=${searchMap["schoolCode"]}&schoolName=${searchMap["schoolName"]}&modify=${searchMap["modify"]} "><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
             </td>
         </tr>
     </div>

@@ -374,7 +374,7 @@ public class BSDataDao {
     public List<BsLessonTrg> getBSLessonTrg(String lessonId,int currentPage,int pageSize) {
         String sql = "SELECT * FROM BS_Lesson_Trg WHERE MID > 0";
         if (StringUtils.isNotBlank(lessonId)) {
-            sql += " and nLessonID='" + lessonId + "' ";
+            sql += " and nLessonID like '%" + lessonId + "%' ";
         }
 
         Session session = getSession();
@@ -418,10 +418,10 @@ public class BSDataDao {
     public List<BsProject> getBSProject(String schoolCode, String schoolName,String description,int currentPage,int pageSize) {
         String sql = "SELECT * FROM BS_Project WHERE id > 0";
         if (StringUtils.isNotBlank(schoolCode)) {
-            sql += " and sCode='" + schoolCode + "' ";
+            sql += " and sCode like '%" + schoolCode + "%' ";
         }
         if (StringUtils.isNotBlank(schoolName)) {
-            sql += " and sName='" + schoolName + "' ";
+            sql += " and sName like '%" + schoolName + "%' ";
         }
         if (StringUtils.isNotBlank(description)) {
             sql += " and sDescription like '%" + description + "%' ";
@@ -471,10 +471,10 @@ public class BSDataDao {
     public List<BsRoom> getBSRoom(String sName, String sAddress,String modify,int currentPage,int pageSize) {
         String sql = "SELECT * FROM BS_Room WHERE id > 0";
         if (StringUtils.isNotBlank(sName)) {
-            sql += " and sCode like '%" + sName + "%' ";
+            sql += " and sName like '%" + sName + "%' ";
         }
         if (StringUtils.isNotBlank(sAddress)) {
-            sql += " and sName like '%" + sAddress + "%' ";
+            sql += " and sAddress like '%" + sAddress + "%' ";
         }
 
         if (StringUtils.isNotBlank(modify)) {
@@ -495,10 +495,10 @@ public class BSDataDao {
     public Integer getCountBSRoom(String sName, String sAddress,String modify) {
         String sql = "SELECT count(*) FROM BS_Room WHERE id > 0";
         if (StringUtils.isNotBlank(sName)) {
-            sql += " and sCode like '%" + sName + "%' ";
+            sql += " and sName like '%" + sName + "%' ";
         }
         if (StringUtils.isNotBlank(sAddress)) {
-            sql += " and sName like '%" + sAddress + "%' ";
+            sql += " and sAddress like '%" + sAddress + "%' ";
         }
 
         if (StringUtils.isNotBlank(modify)) {

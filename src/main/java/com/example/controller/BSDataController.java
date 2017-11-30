@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/a")
@@ -27,6 +29,7 @@ public class BSDataController {
         String schoolCode = request.getParameter("schoolCode");
         String schoolName = request.getParameter("schoolName");
         String modify = request.getParameter("modify");
+        Map<String,String> searchMap = getSearchMap(request);
 //        System.out.println("---->" + modify);
         String to = request.getParameter("to");
         try {
@@ -34,11 +37,12 @@ public class BSDataController {
             if (pageNo == null) {
                 pageNo = "1";
             }
-
+            pageNo = pageNo.trim();
             Page<BsArea> page = bsDataService.getBSArea(schoolCode, schoolName,modify,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("schoolCode",schoolCode);
             model.addAttribute("schoolName",schoolName);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",searchMap);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -50,14 +54,19 @@ public class BSDataController {
     public String getBSAreaNew( HttpServletResponse response,HttpServletRequest request, Model model) {
         String areaCode = request.getParameter("areaCode");
         String areaName = request.getParameter("areaName");
+        Map<String,String> searchMap = getSearchMap(request);
         try {
             String pageNo = request.getParameter("pageNo");
             if (pageNo == null) {
                 pageNo = "1";
             }
-
+            pageNo = pageNo.trim();
+//            pageNo = pageNo.substring(0,1);
             Page<BsAreaNew> page = bsDataService.getBSAreaNew(areaCode, areaName, Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",searchMap);
+            model.addAttribute("areaCode",areaCode);
+            model.addAttribute("areaName",areaName);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -70,6 +79,7 @@ public class BSDataController {
         String sCode = request.getParameter("sCode");
         String sName = request.getParameter("sName");
         String from = request.getParameter("from");
+        Map<String, String> searchMap = getSearchMap(request);
         String to = request.getParameter("to");
         try {
             String pageNo = request.getParameter("pageNo");
@@ -79,6 +89,7 @@ public class BSDataController {
 
             Page<BsClass> page = bsDataService.getBSClass(sCode, sName, from,to,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",searchMap);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -98,6 +109,7 @@ public class BSDataController {
 
             Page<BsClassType> page = bsDataService.getBSClassType(sName, sProjectCode, Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -118,6 +130,8 @@ public class BSDataController {
 
             Page<BsCourse> page = bsDataService.getBSCourse(sCode,sDeptCode, sName, Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
+
         }
         catch (Exception e){
             e.printStackTrace();
@@ -139,6 +153,8 @@ public class BSDataController {
 
             Page<BsLesson> page = bsDataService.getBSLesson(classCode, from,to,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
+
         }
         catch (Exception e){
             e.printStackTrace();
@@ -157,6 +173,7 @@ public class BSDataController {
 
             Page<BsLessonTrg> page = bsDataService.getBSLessonTrg(lessonId,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -177,7 +194,9 @@ public class BSDataController {
             }
 
             Page<BsProject> page = bsDataService.getBSProject(sCode,sName,sDescription,Integer.valueOf(pageNo), PAGESIZE);
+            System.out.println("--------------------------------->>>>>>>>>>>>" + page.getList().size());
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -198,6 +217,7 @@ public class BSDataController {
 
             Page<BsRoom> page = bsDataService.getBSRoom(sName,sAddress,modify,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -220,6 +240,7 @@ public class BSDataController {
 
             Page<BsRoster> page = bsDataService.getBSRoster(sCardCode,sClassCode,sStudentCode,modify,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -241,6 +262,7 @@ public class BSDataController {
 
             Page<BsStudent> page = bsDataService.getBSStudent(sCode,sName,create,modify,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -261,6 +283,7 @@ public class BSDataController {
 
             Page<BsTeacher> page = bsDataService.getBSTeacher(sCode,sName,modify,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -279,6 +302,7 @@ public class BSDataController {
 
             Page<Dtproperties> page = bsDataService.getDtproperties(objectId,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -298,11 +322,101 @@ public class BSDataController {
 
             Page<SDept> page = bsDataService.getSDept(sCode,sName,Integer.valueOf(pageNo), PAGESIZE);
             model.addAttribute("page", page);
+            model.addAttribute("searchMap",getSearchMap(request));
         }
         catch (Exception e){
             e.printStackTrace();
         }
         return "sDept";
+    }
+
+
+    /**
+     * 返回查询条件集合
+     *
+     * @param request
+     * @return
+     */
+    private Map<String, String> getSearchMap(HttpServletRequest request) {
+        Map<String, String> searchMap = new HashMap<String, String>();
+        //校区编码
+        String schoolCode = request.getParameter("schoolCode");
+        schoolCode = schoolCode != null ? schoolCode : "";
+        searchMap.put("schoolCode", schoolCode);
+        //校区名字
+        String schoolName = request.getParameter("schoolName");
+        schoolName = schoolName != null ? schoolName : "";
+        searchMap.put("schoolName", schoolName);
+        //修改时间
+        String modify = request.getParameter("modify");
+        modify = modify != null ? modify : "";
+        searchMap.put("modify", modify);
+        //行政编码
+        String areaCode = request.getParameter("areaCode");
+        areaCode = areaCode != null ? areaCode : "";
+        searchMap.put("areaCode", areaCode);
+        //行政名称
+        String areaName = request.getParameter("areaName");
+        areaName = areaName != null ? areaName : "";
+        searchMap.put("teacherName", areaName);
+        //编码
+        String sCode = request.getParameter("sCode");
+        sCode = sCode != null ? sCode : "";
+        searchMap.put("sCode", sCode);
+        //姓名
+        String sName = request.getParameter("sName");
+        sName = sName != null ? sName : "";
+        searchMap.put("sName", sName);
+        //开始时间
+        String from = request.getParameter("from");
+        from = from != null ? from : "";
+        searchMap.put("from", from);
+       //结束时间
+        String to = request.getParameter("to");
+        to = to != null ? to : "";
+        searchMap.put("to", to);
+       //项目编码
+        String sProjectCode = request.getParameter("sProjectCode");
+        sProjectCode = sProjectCode != null ? sProjectCode : "";
+        searchMap.put("sProjectCode", sProjectCode);
+        //
+        String sDeptCode = request.getParameter("sDeptCode");
+        sDeptCode = sDeptCode != null ? sDeptCode : "";
+        searchMap.put("sDeptCode", sDeptCode);
+ //
+        String classCode = request.getParameter("classCode");
+        classCode = classCode != null ? classCode : "";
+        searchMap.put("classCode", classCode);
+
+        String lessonId = request.getParameter("lessonId");
+        lessonId = lessonId != null ? lessonId : "";
+        searchMap.put("lessonId", lessonId);
+
+        String sDescription = request.getParameter("sDescription");
+        sDescription = sDescription != null ? sDescription : "";
+        searchMap.put("sDescription", sDescription);
+
+        String sAddress = request.getParameter("sAddress");
+        sAddress = sAddress != null ? sAddress : "";
+        searchMap.put("sAddress", sAddress);
+ String sCardCode = request.getParameter("sCardCode");
+        sCardCode = sCardCode != null ? sCardCode : "";
+        searchMap.put("sCardCode", sCardCode);
+ String sClassCode = request.getParameter("sClassCode");
+        sClassCode = sClassCode != null ? sClassCode : "";
+        searchMap.put("sClassCode", sClassCode);
+
+        String sStudentCode = request.getParameter("sStudentCode");
+        sStudentCode = sStudentCode != null ? sStudentCode : "";
+        searchMap.put("sStudentCode", sStudentCode);
+ String create = request.getParameter("create");
+        create = create != null ? create : "";
+        searchMap.put("create", create);
+String objectId = request.getParameter("objectId");
+        objectId = objectId != null ? objectId : "";
+        searchMap.put("objectId", objectId);
+
+        return searchMap;
     }
 
 

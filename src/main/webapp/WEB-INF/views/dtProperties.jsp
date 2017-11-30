@@ -85,7 +85,7 @@
     <br/>
     <form action="/a/getDtproperties" name="search" method="post" class="form-horizontal">
         &nbsp;&nbsp;<label for="objectId"> Id </label>&nbsp;&nbsp;
-        <input type="text" id="objectId" name="objectId">
+        <input type="text" id="objectId" name="objectId" value="${searchMap["objectId"]}">
         <%-- &nbsp;&nbsp;<label for="from">从</label>
          <input type="text" id="from" name="from">
          <label for="to">到</label>
@@ -119,11 +119,11 @@
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>
 
-                <a href="${path}/a/getDtproperties?pageNo=${page.topPageNo }"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getDtproperties?pageNo=${page.topPageNo}&objectId=${searchMap["objectId"]}"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
                 <c:choose>
                     <c:when test="${page.pageNo!=1}">
 
-                        <a href="${path}/a/getDtproperties?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getDtproperties?pageNo=${page.previousPageNo}&objectId=${searchMap["objectId"]}"><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
 
                     </c:when>
                     <c:otherwise>
@@ -134,7 +134,7 @@
                 </c:choose>
                 <c:choose>
                     <c:when test="${page.pageNo != page.totalPages}">
-                        <a href="${path}/a/getDtproperties?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getDtproperties?pageNo=${page.nextPageNo}&objectId=${searchMap["objectId"]}"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
                     </c:when>
                     <c:otherwise>
 
@@ -142,7 +142,7 @@
 
                     </c:otherwise>
                 </c:choose>
-                <a href="${path}/a/getDtproperties?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getDtproperties?pageNo=${page.bottomPageNo}&objectId=${searchMap["objectId"]}"><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
             </td>
         </tr>
     </div>

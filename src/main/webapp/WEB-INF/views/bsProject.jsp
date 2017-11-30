@@ -85,11 +85,11 @@
     <br/>
     <form action="/a/getBSProject" name="search" method="post" class="form-horizontal">
         &nbsp;&nbsp;<label for="sCode"> 项目编码 </label>&nbsp;&nbsp;
-        <input type="text" id="sCode" name="sCode">
+        <input type="text" id="sCode" name="sCode" value="${searchMap["sCode"]}">
         &nbsp;&nbsp;<label for="sName"> 项目名称 </label>&nbsp;&nbsp;
-        <input type="text" id="sName" name="sName">
+        <input type="text" id="sName" name="sName" value="${searchMap["sName"]}">
         &nbsp;&nbsp;<label for="sDescription"> 描述 </label>&nbsp;&nbsp;
-        <input type="text" id="sDescription" name="sDescription">
+        <input type="text" id="sDescription" name="sDescription" value="${searchMap["sDescription"]}">
         &nbsp;&nbsp;<button type="submit" class="btn btn-primary">查询</button>
         &nbsp;&nbsp;<button type="reset" class="btn btn-primary"> 重置</button>
     </form>
@@ -120,11 +120,11 @@
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>
 
-                <a href="${path}/a/getBSProject?pageNo=${page.topPageNo }"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getBSProject?pageNo=${page.topPageNo}&sCode=${searchMap["sCode"]}&sName=${searchMap["sName"]}&sDescription=${searchMap["sDescription"]}"><input type="button" name="fristPage" value="首页" class="btn btn-primary btn-xs" /></a>
                 <c:choose>
                     <c:when test="${page.pageNo!=1}">
 
-                        <a href="${path}/a/getBSProject?pageNo=${page.previousPageNo }"><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getBSProject?pageNo=${page.previousPageNo}&sCode=${searchMap["sCode"]}&sName=${searchMap["sName"]}&sDescription=${searchMap["sDescription"]}"><input type="button" name="previousPage" value="上一页" class="btn btn-primary btn-xs" /></a>
 
                     </c:when>
                     <c:otherwise>
@@ -135,7 +135,7 @@
                 </c:choose>
                 <c:choose>
                     <c:when test="${page.pageNo != page.totalPages}">
-                        <a href="${path}/a/getBSProject?pageNo=${page.nextPageNo }"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
+                        <a href="${path}/a/getBSProject?pageNo=${page.nextPageNo}&sCode=${searchMap["sCode"]}&sName=${searchMap["sName"]}&sDescription=${searchMap["sDescription"]}"><input type="button" name="nextPage" value="下一页" class="btn btn-primary btn-xs" /></a>
                     </c:when>
                     <c:otherwise>
 
@@ -143,7 +143,7 @@
 
                     </c:otherwise>
                 </c:choose>
-                <a href="${path}/a/getBSProject?pageNo=${page.bottomPageNo }"><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
+                <a href="${path}/a/getBSProject?pageNo=${page.bottomPageNo}&sCode=${searchMap["sCode"]}&sName=${searchMap["sName"]}&sDescription=${searchMap["sDescription"]}"><input type="button" name="lastPage" value="尾页" class="btn btn-primary btn-xs" /></a>
             </td>
         </tr>
     </div>
