@@ -14,8 +14,10 @@
         <property name="locations">
             <list>
                 <value>classpath:dbconfig.properties</value>
+                <value>classpath:user.properties</value>
             </list>
         </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
 
     <bean id="pooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -42,7 +44,14 @@
         </property>
     </bean>
 
+  <!--  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:user.properties" />
+    </bean>-->
 
+    <bean id="loginDao" class="com.example.dao.LoginDao">
+        <property name="user" value="${login.username}"/>
+        <property name="pass" value="${login.password}"/>
+    </bean>
 
 
     <!-- ===============事务控制的配置 ================-->

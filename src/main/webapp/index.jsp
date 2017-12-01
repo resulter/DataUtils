@@ -21,13 +21,13 @@
         <div class="form-group">
             <label for="username" class="col-sm-3 control-label" >账号</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" name="username" id="username" placeholder="a">
+                <input type="text" class="form-control" name="username" id="username" placeholder="username">
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">密码</label>
             <div class="col-sm-3">
-                <input type="password" class="form-control" name="password" id="password" placeholder="a">
+                <input type="password" class="form-control" name="password" id="password" placeholder="password">
             </div>
         </div>
         <div class="form-group">
