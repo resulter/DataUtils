@@ -2,15 +2,13 @@ package com.example.dao;
 
 import com.example.entity.*;
 import org.apache.commons.lang3.StringUtils;
+import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.query.NativeQuery;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -291,7 +289,7 @@ public class BSDataDao {
         }
         Session session = getSession();
         try {
-            SQLQuery query = session.createNativeQuery(sql);
+            SQLQuery query = session.createSQLQuery(sql);
             List list = query.list();
             if (list != null && list.size() > 0) {
                 if (list.get(0) == null) {
@@ -522,7 +520,6 @@ public class BSDataDao {
     }
  /**-------------------------------------------------------------------------------------------------------------------
      * 第10个表
-     * @param schoolCode
      * @return
      */
     public List<BsRoster> getBSRoster(String sCardCode, String sClassCode,String sStudentCode,String modify,int currentPage,int pageSize) {
@@ -685,7 +682,7 @@ public class BSDataDao {
 //        SQLQuery query = getSession().createSQLQuery(sql).setFirstResult(1).setMaxResults(6);
         Session session = getSession();
         try {
-            NativeQuery query = session.createNativeQuery(sql);
+            Query query = session.createSQLQuery(sql);
             List list = query.list();
             if (list != null && list.size() > 0) {
                 if (list.get(0) == null) {

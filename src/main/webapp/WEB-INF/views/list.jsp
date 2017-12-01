@@ -31,10 +31,5 @@
 <body>
 <jsp:include page="menu.jsp"/>
 
-<%--<div id="content">--%>
-
-<%--</div>--%>
-<%--<a href="/a/getBSArea">getBSArea</a>--%>
-<%--list--%>
 </body>
 </html>

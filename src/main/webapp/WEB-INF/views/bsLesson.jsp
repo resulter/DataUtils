@@ -82,12 +82,11 @@
 
 </div>
 <div id="mainBody">
-
+    <div id="mainHeader">
+        <span><p id="title">数据查询工具</p></span>
 
     <br/>
     <form action="/a/getBSLesson" name="search" method="post" class="form-horizontal">
-        <%--&nbsp;&nbsp;<label for="lessonNo"> lessonNo </label>&nbsp;&nbsp;
-        <input type="text" id="lessonNo" name="lessonNo">--%>
         &nbsp;&nbsp;<label for="classCode"> 课编码 </label>&nbsp;&nbsp;
         <input type="text" id="classCode" name="classCode" value="${searchMap["classCode"]}">
         &nbsp;&nbsp;<label for="from">从</label>
@@ -97,6 +96,7 @@
         &nbsp;&nbsp;<button type="submit" class="btn btn-primary">查询</button>
         &nbsp;&nbsp;<button type="reset" class="btn btn-primary"> 重置</button>
     </form>
+    </div>
     <div>
         <table id="treeTable" class="table table-striped table-bordered table-condensed">
             <tr><th>课编码</th><th>教室编码</th><th>教师编码</th><th>修改时间</th><th>开始时间</th><th>结束时间</th></tr>
@@ -111,17 +111,6 @@
 
                 </tr>
             </c:forEach>
-            <%--<c:forEach items="${list}" var="office">--%>
-            <%--<tr >--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-
-            <%--</tr>--%>
-            <%--</c:forEach>--%>
-            <%----%>
         </table>
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>

@@ -9,8 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+
+@Service("bsDataService")
 @Transactional
-@Service("bSDataService")
 public class BSDataService {
 
     @Autowired

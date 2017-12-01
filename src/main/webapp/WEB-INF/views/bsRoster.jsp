@@ -81,7 +81,8 @@
 </div>
 <div id="mainBody">
 
-
+    <div id="mainHeader">
+        <span><p id="title">数据查询工具</p></span>
     <br/>
     <form action="/a/getBSRoster" name="search" method="get" class="form-horizontal">
         &nbsp;&nbsp;<label for="sCardCode"> 听课证号 </label>&nbsp;&nbsp;
@@ -94,7 +95,7 @@
         <input type="text" id="modify" name="modify">
         &nbsp;&nbsp;<button type="submit" class="btn btn-primary">查询</button>
         &nbsp;&nbsp;<button type="reset" class="btn btn-primary"> 重置</button>
-    </form>
+    </form></div>
     <div>
         <table id="treeTable" class="table table-striped table-bordered table-condensed">
             <tr><th>听课证号</th><th>班级编码</th><th>学生编码</th><th>是否有效</th><th>是否有效</th></tr>
@@ -110,17 +111,6 @@
 
                 </tr>
             </c:forEach>
-            <%--<c:forEach items="${list}" var="office">--%>
-            <%--<tr >--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-
-            <%--</tr>--%>
-            <%--</c:forEach>--%>
-            <%----%>
         </table>
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>

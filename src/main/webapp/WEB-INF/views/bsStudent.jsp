@@ -83,7 +83,8 @@
 </div>
 <div id="mainBody">
 
-
+    <div id="mainHeader">
+        <span><p id="title">数据查询工具</p></span>
     <br/>
     <form action="/a/getBSStudent" name="search" method="get" class="form-horizontal">
         &nbsp;&nbsp;<label for="sCode"> 学生编号 </label>&nbsp;&nbsp;
@@ -98,6 +99,7 @@
         &nbsp;&nbsp;<button type="submit" class="btn btn-primary">查询</button>
         &nbsp;&nbsp;<button type="reset" class="btn btn-primary"> 重置</button>
     </form>
+    </div>
     <div>
         <table id="treeTable" class="table table-striped table-bordered table-condensed">
             <tr><th>学员编号</th><th>学员姓名</th><th>创建时间</th><th>修改时间</th></tr>
@@ -110,17 +112,6 @@
 
                 </tr>
             </c:forEach>
-            <%--<c:forEach items="${list}" var="office">--%>
-            <%--<tr >--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-            <%--<td>${office.sName}</td>--%>
-            <%--<td>${office.id}</td>--%>
-
-            <%--</tr>--%>
-            <%--</c:forEach>--%>
-            <%----%>
         </table>
         <tr>
             <td colspan="6" align="center" bgcolor="#5BA8DE"><h3>共${page.totalRecords}条记录 共${page.totalPages}页 当前第${page.pageNo}页</h3><br>

@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Properties;
 
 
 @Controller
@@ -26,11 +23,13 @@ public class LoginController {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
         model.addAttribute("username",username);
         if(LoginService.login(username,password)){
+            System.out.println("登陆成功");
             return "forward:getBSArea";
         }else {
+            System.out.println("登陆失败");
+
             return "loginError";
         }
     }

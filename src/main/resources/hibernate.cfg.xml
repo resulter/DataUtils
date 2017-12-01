@@ -6,6 +6,7 @@
   <session-factory>
     <property name="connection.url">jdbc:sqlserver://192.168.25.98;database=BJ20140915</property>
     <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="javax.persistence.validation.mode">none</property>
     <property name="db_wutianlin_bj"/>
     <property name="beijing_wtl_test"/>
     <mapping resource="com/example/entity/SysDict.hbm.xml"/>
