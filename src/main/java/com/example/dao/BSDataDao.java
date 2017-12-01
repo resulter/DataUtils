@@ -265,7 +265,7 @@ public class BSDataDao {
             sql += " and sName like '%" + schoolName + "%' ";
         }
         if (StringUtils.isNotBlank(sDeptCode)) {
-            sql += " and sDescription like '%" + sDeptCode + "%' ";
+            sql += " and sDeptCode like '%" + sDeptCode + "%' ";
         }
         Session session = getSession();
         try {
@@ -287,7 +287,7 @@ public class BSDataDao {
             sql += " and sName like '%" + schoolName + "%' ";
         }
         if (StringUtils.isNotBlank(sDeptCode)) {
-            sql += " and sDescription like '%" + sDeptCode + "%' ";
+            sql += " and sDeptCode like '%" + sDeptCode + "%' ";
         }
         Session session = getSession();
         try {

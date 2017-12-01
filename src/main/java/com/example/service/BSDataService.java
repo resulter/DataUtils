@@ -81,7 +81,7 @@ public class BSDataService {
         Page<BsCourse> page = new Page<BsCourse>();
 
         int count = bsDataDao.getCountBSCourse(schoolCode,sDeptCode, schoolName);
-        List<BsCourse> list = bsDataDao.getBSCourse(schoolCode, schoolName,sDeptCode, currentPage, pageSize);
+        List<BsCourse> list = bsDataDao.getBSCourse(schoolCode,sDeptCode,schoolName, currentPage, pageSize);
         page.setPageNo(currentPage);
         page.setPageSize(pageSize);
         page.setList(list);
